@@ -12,7 +12,9 @@ class SignUpController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        emailTextField.delegate = self
+        passwordTextfield.delegate = self
+        passwordConfirmTextfield.delegate = self
         // Do any additional setup after loading the view.
     }
     static func isPasswordValid(_ password : String) -> Bool {
@@ -56,4 +58,13 @@ class SignUpController: UIViewController {
               self.navigationController!.pushViewController(vc, animated: true)
     }
   
+}
+extension SignUpController : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailTextField.resignFirstResponder()
+        passwordTextfield.resignFirstResponder()
+        passwordConfirmTextfield.resignFirstResponder()
+        return true
+    }
+    
 }

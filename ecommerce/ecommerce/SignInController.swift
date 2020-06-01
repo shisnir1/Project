@@ -9,7 +9,8 @@ class SignInController: UIViewController {
       var signIn = manualLogin()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        userNameTextField.delegate = self
+        passwordTextField.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -27,4 +28,11 @@ class SignInController: UIViewController {
     }
     */
 
+}
+extension SignInController : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        userNameTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        return true
+    }
 }
