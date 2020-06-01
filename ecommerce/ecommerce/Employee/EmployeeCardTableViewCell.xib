@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="148" id="KGk-i7-Jjw" customClass="EmployeeCardTableViewCell" customModule="ecommerce" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7c-lo-5aS">
+                        <rect key="frame" x="94" y="8" width="45" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufx-MB-qkg">
+                        <rect key="frame" x="232" y="47" width="30" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="Bfy-o2-FTQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Salary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isR-cm-RL9">
+                        <rect key="frame" x="94" y="86" width="60" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="D8g-yb-9AE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Nk9-Rx-jE3">
+                        <rect key="frame" x="16" y="14" width="70" height="111.5"/>
+                        <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="PaY-df-jRo"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="102.5" id="mwp-sG-MCa"/>
+                            <constraint firstAttribute="width" constant="70" id="pfG-Ra-p7g"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raR-uk-tO6">
+                        <rect key="frame" x="94" y="47" width="64" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="64" id="4ra-Sn-NHO"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="raR-uk-tO6" firstAttribute="leading" secondItem="Nk9-Rx-jE3" secondAttribute="trailing" constant="8" id="9Tp-fS-V3A"/>
+                    <constraint firstItem="isR-cm-RL9" firstAttribute="leading" secondItem="Nk9-Rx-jE3" secondAttribute="trailing" constant="8" id="BOe-Oi-pcD"/>
+                    <constraint firstItem="Ufx-MB-qkg" firstAttribute="leading" secondItem="raR-uk-tO6" secondAttribute="trailing" constant="74" id="CRH-p4-jS3"/>
+                    <constraint firstAttribute="trailing" secondItem="t7c-lo-5aS" secondAttribute="trailing" constant="8" id="Hs9-9X-TxS"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="isR-cm-RL9" secondAttribute="bottom" constant="30" id="N7D-d0-fmQ"/>
+                    <constraint firstItem="raR-uk-tO6" firstAttribute="top" secondItem="t7c-lo-5aS" secondAttribute="bottom" constant="18" id="PQt-6l-06W"/>
+                    <constraint firstItem="isR-cm-RL9" firstAttribute="top" secondItem="raR-uk-tO6" secondAttribute="bottom" constant="18" id="S3N-x0-sSx"/>
+                    <constraint firstItem="Nk9-Rx-jE3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ZK9-tH-vtg"/>
+                    <constraint firstItem="Ufx-MB-qkg" firstAttribute="top" secondItem="t7c-lo-5aS" secondAttribute="bottom" constant="18" id="Zln-jv-gb8"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="isR-cm-RL9" secondAttribute="trailing" constant="8" id="Zza-Ob-nH9"/>
+                    <constraint firstItem="t7c-lo-5aS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="dQ1-Jd-f2s"/>
+                    <constraint firstAttribute="bottom" secondItem="Nk9-Rx-jE3" secondAttribute="bottom" constant="21" id="jlH-88-jTi"/>
+                    <constraint firstItem="Nk9-Rx-jE3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="lyg-2p-pGC"/>
+                    <constraint firstItem="isR-cm-RL9" firstAttribute="top" secondItem="raR-uk-tO6" secondAttribute="bottom" constant="18" id="nbk-4v-Ame"/>
+                    <constraint firstAttribute="trailing" secondItem="Ufx-MB-qkg" secondAttribute="trailing" constant="8" id="sQf-3i-Bs2"/>
+                    <constraint firstItem="t7c-lo-5aS" firstAttribute="leading" secondItem="Nk9-Rx-jE3" secondAttribute="trailing" constant="8" id="xQb-h6-hXZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="employeeAge" destination="Ufx-MB-qkg" id="OPt-iT-nHs"/>
+                <outlet property="employeeId" destination="raR-uk-tO6" id="dcD-QR-mHW"/>
+                <outlet property="employeeImage" destination="Nk9-Rx-jE3" id="pn7-8W-0sS"/>
+                <outlet property="employeeName" destination="t7c-lo-5aS" id="8Jj-cR-3cj"/>
+                <outlet property="employeeSalary" destination="isR-cm-RL9" id="ql9-pt-kwO"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="person.crop.square" catalog="system" width="128" height="114"/>
+    </resources>
+</document>
