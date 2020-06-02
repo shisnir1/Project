@@ -14,6 +14,7 @@ class LocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         self.setUpMapView()
     }
     
@@ -36,9 +37,10 @@ class LocationViewController: UIViewController {
             }
             locationManager.startUpdatingLocation()
         }
-        
+       
         /// Function to add Annotation on Map
         /// - Parameter cordinates: location Cordinates
+        let cordinates = [51.5074,0.1278]
         func addAnnotationsOnMapView(cordinates: CLLocationCoordinate2D) {
             let london = MKPointAnnotation()
             london.title = "Annotation"
@@ -48,8 +50,8 @@ class LocationViewController: UIViewController {
         }
         
        
-    var latitude : Double = 28.6139
-    var longitude : Double = 77.2090
+    var latitude : Double = 51.5074
+    var longitude : Double = 0.1278
     func geocode(latitude: Double, longitude: Double)  {
             CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: latitude, longitude: longitude)) { placemark, error in
                 guard let placemark = placemark, error == nil else {
