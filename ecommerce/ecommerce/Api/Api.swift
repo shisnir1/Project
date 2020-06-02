@@ -4,7 +4,7 @@ import Foundation
 struct Api{
     // Creating a Session
     let session = URLSession(configuration: .default)
-    func getEmployees(completionBlock: @escaping(_ response: Any?, _ error:  Error?) -> Void) {
+    func getEmployeesData(completionBlock: @escaping(_ response: Any?, _ error:  Error?) -> Void) {
         let request = URLRequest(url: URL(string: "http://dummy.restapiexample.com/api/v1/employees")!)
         var employeeArray: [EmployeeModel] = []
         let dataTask = session.dataTask(with: request) { (data, response, error) in
@@ -41,7 +41,7 @@ struct Api{
         dataTask.resume()
         
     }
-    func getTrendingMovies(completionBlock: @escaping(_ respnose: Any?, _ error: Error?) -> Void) {
+    func getTrendingMoviesData(completionBlock: @escaping(_ respnose: Any?, _ error: Error?) -> Void) {
            var array: [MovieResultModel] = []
                
            let request = URLRequest(url: URL(string: "https://api.themoviedb.org/3/trending/all/day?api_key=820016b7116f872f5f27bf56f9fdfb66")!)
@@ -71,7 +71,7 @@ struct Api{
            dataTask.resume()
        }
        
-       func getPopularMovies(completionBlock: @escaping(_ respons: Any?, _ error: Error?) -> Void) {
+       func getPopularMoviesData(completionBlock: @escaping(_ respons: Any?, _ error: Error?) -> Void) {
            var array: [MovieResultModel] = []
            let request = URLRequest(url: URL(string: "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=820016b7116f872f5f27bf56f9fdfb66")!)
            let dataTask = session.dataTask(with: request) { (data, response, error) in
@@ -96,7 +96,7 @@ struct Api{
            dataTask.resume()
        }
        
-       func getBestDrama(completionBlock: @escaping(_ respons: Any?, _ error: Error?) -> Void) {
+       func getBestDramaData(completionBlock: @escaping(_ respons: Any?, _ error: Error?) -> Void) {
            var array: [MovieResultModel] = []
            let request = URLRequest(url: URL(string: "https://api.themoviedb.org/3/discover/movie?with_genres=18&sort_by=vote_average.desc&vote_count.gte=10&api_key=820016b7116f872f5f27bf56f9fdfb66")!)
            let dataTask = session.dataTask(with: request) { (data, response, error) in
@@ -121,7 +121,7 @@ struct Api{
            dataTask.resume()
        }
 
- func getKidsMovies(completionBlock: @escaping(_ respons: Any?, _ error: Error?) -> Void) {
+ func getKidsMoviesData(completionBlock: @escaping(_ respons: Any?, _ error: Error?) -> Void) {
         var array: [MovieResultModel] = []
         let request = URLRequest(url: URL(string: "https://api.themoviedb.org/3/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=820016b7116f872f5f27bf56f9fdfb66")!)
         let dataTask = session.dataTask(with: request) { (data, response, error) in
@@ -146,7 +146,7 @@ struct Api{
         dataTask.resume()
     }
     
-    func getInTheatresMovies(completionBlock: @escaping(_ respons: Any?, _ error: Error?) -> Void) {
+    func getInTheatresMoviesData(completionBlock: @escaping(_ respons: Any?, _ error: Error?) -> Void) {
         var array: [MovieResultModel] = []
         let request = URLRequest(url: URL(string: "https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2018-09-15&primary_release_date.lte=2018-10-22&api_key=820016b7116f872f5f27bf56f9fdfb66")!)
         let dataTask = session.dataTask(with: request) { (data, response, error) in

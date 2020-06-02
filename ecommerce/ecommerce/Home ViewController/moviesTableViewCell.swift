@@ -13,7 +13,7 @@ extension MovieCellTableViewDelegate {
 class moviesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var moviesCollectionView: UICollectionView!
-    var movieArray: [MovieResultModel]? = [] {
+    var moviesArray: [MovieResultModel]? = [] {
         didSet{
             DispatchQueue.main.async {
                 self.moviesCollectionView.reloadData()
@@ -44,25 +44,25 @@ class moviesTableViewCell: UITableViewCell {
 }
 extension moviesTableViewCell : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movieArray?.count ?? 0
+        return moviesArray?.count ?? 0
 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if trending {
                    let cell = moviesCollectionView.dequeueReusableCell(withReuseIdentifier: "trendingMovies", for: indexPath) as! trendingMovies
-               cell.moviePoster.setImageFromURL(ImageURL: "https://image.tmdb.org/t/p/w500/\( movieArray?[indexPath.item].backdrop_path ?? "")")
+               cell.moviePoster.setImageFromURL(ImageURL: "https://image.tmdb.org/t/p/w500/\( moviesArray?[indexPath.item].backdrop_path ?? "")")
                    return cell
                } else {
                    let cell = moviesCollectionView.dequeueReusableCell(withReuseIdentifier: "movieDetail", for: indexPath) as! movieDetail
-                   cell.moviePoster.setImageFromURL(ImageURL: "https://image.tmdb.org/t/p/w500/\( movieArray?[indexPath.item].poster_path ?? "")")
-                   cell.movieName.text = movieArray?[indexPath.item].original_name ?? movieArray?[indexPath.item].original_title
-                   cell.movieRating.text = "\(movieArray?[indexPath.item].vote_average ?? 0)"
+                   cell.moviePoster.setImageFromURL(ImageURL: "https://image.tmdb.org/t/p/w500/\( moviesArray?[indexPath.item].poster_path ?? "")")
+                   cell.movieName.text = moviesArray?[indexPath.item].original_name ?? moviesArray?[indexPath.item].original_title
+                   cell.movieRating.text = "\(moviesArray?[indexPath.item].vote_average ?? 0)"
                    return cell
                }
     }
      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            guard let moviesArray = self.movieArray else { return }
+            guard let moviesArray = self.moviesArray else { return }
             delegate?.selectedRow(withArray: moviesArray, index: indexPath.item)
             
         }

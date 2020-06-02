@@ -24,7 +24,7 @@ class EmployeeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     func getEmployeeData() {
-          apiManager.getEmployees { [weak self] (response, error) in
+          apiManager.getEmployeesData { [weak self] (response, error) in
               
               if let response = response as? [EmployeeModel] {
                   for item in response {

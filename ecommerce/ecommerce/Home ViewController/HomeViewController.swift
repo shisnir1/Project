@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
             self.moviesTableView.delegate = self
             
             
-            apiManager.getTrendingMovies { (response, error) in
+            apiManager.getTrendingMoviesData { (response, error) in
                 if let response = response as? [MovieResultModel] {
                     
                         self.trendingMovies = response
@@ -39,7 +39,7 @@ class HomeViewController: UIViewController {
                 }
             }
             
-            apiManager.getPopularMovies { (response, error) in
+            apiManager.getPopularMoviesData { (response, error) in
                 if let response = response as? [MovieResultModel] {
                         self.popularMovies = response
                         //print(item)
@@ -52,7 +52,7 @@ class HomeViewController: UIViewController {
                 }
             }
             
-            apiManager.getBestDrama { (response, error) in
+            apiManager.getBestDramaData { (response, error) in
                 if let response = response as? [MovieResultModel] {
                    
                         self.bestDrama = response
@@ -64,7 +64,7 @@ class HomeViewController: UIViewController {
                     print("data from best drama API is recieved")
                 }
             }
-            apiManager.getKidsMovies { (response, error) in
+            apiManager.getKidsMoviesData { (response, error) in
                        if let response = response as? [MovieResultModel] {
                           
                                self.kidsMovies = response
@@ -77,7 +77,7 @@ class HomeViewController: UIViewController {
                        }
                    }
                    
-                   apiManager.getInTheatresMovies { (response, error) in
+                   apiManager.getInTheatresMoviesData { (response, error) in
                        if let response = response as? [MovieResultModel] {
                           
                                self.inTheatresMovies = response
@@ -113,23 +113,23 @@ class HomeViewController: UIViewController {
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = moviesTableView.dequeueReusableCell(withIdentifier: "moviesTableViewCell", for: indexPath) as! moviesTableViewCell
      if indexPath.section == 0 {
-                       cell.movieArray = trendingMovies
+                       cell.moviesArray = trendingMovies
                        cell.trending = true
                    }
                    else if indexPath.section == 1 {
-                       cell.movieArray = popularMovies
+                       cell.moviesArray = popularMovies
                        cell.trending = false
                    }
                    else if indexPath.section == 2 {
-                       cell.movieArray = bestDrama
+                       cell.moviesArray = bestDrama
                        cell.trending = false
                    }
                    else if indexPath.section == 3 {
-                       cell.movieArray = kidsMovies
+                       cell.moviesArray = kidsMovies
                        cell.trending = false
                    }
                    else if indexPath.section == 4 {
-                       cell.movieArray = inTheatresMovies
+                       cell.moviesArray = inTheatresMovies
                        cell.trending = false
                    }
                    cell.index = indexPath.row
