@@ -417,7 +417,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = "Rajat Tyagi";
+				ORGANIZATIONNAME = "Shishir SIngh";
 				TargetAttributes = {
 					04B0267F2424B1F7003D4C69 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -808,6 +808,7 @@
 				CODE_SIGN_ENTITLEMENTS = ecommerce/ecommerce.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ecommerce/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -827,6 +828,7 @@
 				CODE_SIGN_ENTITLEMENTS = ecommerce/ecommerce.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ecommerce/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

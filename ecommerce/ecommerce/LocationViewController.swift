@@ -63,6 +63,7 @@ class LocationViewController: UIViewController {
     }
 
     //MARK: - CLLocationManagerDelegate Methods
+            let cordinates = [51.5074,0.1278]
     extension LocationViewController: CLLocationManagerDelegate {
         func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             let location = locations.last! as CLLocation
